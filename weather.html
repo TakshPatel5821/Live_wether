@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Map Weather Viewer</title>
+  <meta charset="utf-8">
+  <script src="OpenLayers/OpenLayers.js"></script>
+  <script src="weather.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(120deg, #e0f7fa 0%, #ceeaff 100%);
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    #app {
+      max-width: 1050px;
+      margin: 38px auto;
+      padding: 30px 40px;
+      background: #fff;
+      box-shadow: 0 4px 38px #bbe;
+      border-radius: 22px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.3em;
+      color: #1479c3;
+      margin-bottom: 26px;
+    }
+
+    .instructions {
+      text-align: center;
+      font-size: 1.1em;
+      color: #355;
+      margin-bottom: 32px;
+    }
+
+    #area {
+      display: flex;
+      flex-direction: row;
+      gap: 44px;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    #map {
+      width: 520px;
+      height: 620px;
+      border-radius: 14px;
+      border: 2px solid #2993e3;
+      background: #f4fbff;
+      box-shadow: 0 4px 18px #aac;
+    }
+
+    #weatherInfo {
+      flex: 1;
+      min-width: 290px;
+      max-width: 370px;
+      background: #f4fbff;
+      border-radius: 16px;
+      box-shadow: 0 4px 18px #eef;
+      padding: 34px 22px;
+      font-size: 1.16em;
+      color: #284b63;
+    }
+
+    #weatherInfo .title {
+      font-weight: bold;
+      font-size: 1.15em;
+      color: #1e4e97;
+      margin-bottom: 8px;
+    }
+
+    #source {
+      text-align: right;
+      color: #589;
+      font-size: 0.93em;
+      margin-top: 18px;
+    }
+
+    @media (max-width: 900px) {
+      #area {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      #weatherInfo {
+        margin: 24px 0 0 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <h1>Weather Map Viewer</h1>
+    <div class="instructions">
+      <strong>Click anywhere on the map</strong> to select a location and see live weather details.<br>
+      Marker will move to your chosen point.
+    </div>
+    <div id="area">
+      <div id="map"></div>
+      <div id="weatherInfo">
+        <div class="title">Weather Data</div>
+        <div id="output"><em>Select a spot on the map for weather info.</em></div>
+      </div>
+    </div>
+    <div id="source">
+      Data via OpenWeatherMap; Map via OpenStreetMap + OpenLayers.
+    </div>
+  </div>
+</body>
+
+</html>
